@@ -1,7 +1,7 @@
 <label class="block font-bold">Parent</label>
 <input [(ngModel)]="person.first_name" class="border mr-2 p-1"/>
 <input [(ngModel)]="person.last_name" class="border mr-2 p-1"/>
-<button (click)="reset()" class="border p-1">Change Name</button>
+<button (click)="reset()" class="p-1 pl-4 pr-4 rounded-md border bg-slate-400 text-slate-100">Change Name</button>
 <div class="mt-5">
     <app-section-one [parentData]="person"></app-section-one>
     <app-section-two [parentData]="person"></app-section-two>

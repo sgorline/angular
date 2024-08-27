@@ -31,11 +31,21 @@ export class ChangeDetectionComponent {
     last_name: 'Gorline'
   };
 
+  private persons: Person[] = [
+    { first_name: 'Alice', last_name: 'Smith' },
+    { first_name: 'Bob', last_name: 'Jones' },
+    { first_name: 'Carol', last_name: 'Williams' },
+    { first_name: 'David', last_name: 'Brown' },
+    { first_name: 'Emily', last_name: 'Taylor' },
+    { first_name: 'Frank', last_name: 'Thomas' },
+    { first_name: 'Grace', last_name: 'Johnson' },
+    { first_name: 'Hannah', last_name: 'White' },
+    { first_name: 'Isaac', last_name: 'Miller' },
+    { first_name: 'Jessica', last_name: 'Davis' }
+  ];
+
   public reset(): void {
-    this.person = {
-      first_name: 'New',
-      last_name: 'Guy'
-    }
+    this.person = this.persons[Math.floor(Math.random() * 10)];
   }
 
 }
