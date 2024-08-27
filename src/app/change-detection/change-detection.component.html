@@ -1,7 +1,9 @@
-
-<input [(ngModel)]="data"/>
-
-<div>
-    <app-section-one [parentData]="data" (dataUpdated)="updateData($event)"></app-section-one>
-    <app-section-two [parentData]="data"></app-section-two>
+<label class="block font-bold">Parent</label>
+<input [(ngModel)]="person.first_name" class="border mr-2 p-1"/>
+<input [(ngModel)]="person.last_name" class="border mr-2 p-1"/>
+<button (click)="reset()" class="border p-1">Change Name</button>
+<div class="mt-5">
+    <app-section-one [parentData]="person"></app-section-one>
+    <app-section-two [parentData]="person"></app-section-two>
+    <app-section-three [parentData]="person"></app-section-three>
 </div>

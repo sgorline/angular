@@ -2,7 +2,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SectionOneComponent } from './section-one/section-one.component';
+import { SectionThreeComponent } from './section-three/section-three.component';
 import { SectionTwoComponent } from './section-two/section-two.component';
+
+type Person = {
+  first_name: string,
+  last_name: string
+};
 
 @Component({
   selector: 'app-change-detection',
@@ -11,6 +17,7 @@ import { SectionTwoComponent } from './section-two/section-two.component';
     CommonModule,
     FormsModule,
     SectionOneComponent,
+    SectionThreeComponent,
     SectionTwoComponent
   ],
   templateUrl: './change-detection.component.html',
@@ -19,10 +26,16 @@ import { SectionTwoComponent } from './section-two/section-two.component';
 })
 export class ChangeDetectionComponent {
 
-  public data: string = 'initial';
+  public person: Person = {
+    first_name: 'Steve',
+    last_name: 'Gorline'
+  };
 
-  public updateData(newValue: string): void {
-    this.data = newValue;
+  public reset(): void {
+    this.person = {
+      first_name: 'New',
+      last_name: 'Guy'
+    }
   }
 
 }
