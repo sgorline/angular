@@ -1,1 +1,7 @@
-<p>change-detection works!</p>
+
+<input [(ngModel)]="data"/>
+
+<div>
+    <app-section-one [parentData]="data" (dataUpdated)="updateData($event)"></app-section-one>
+    <app-section-two [parentData]="data"></app-section-two>
+</div>
