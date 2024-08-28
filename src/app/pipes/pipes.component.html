@@ -1,1 +1,11 @@
-<p>pipes works!</p>
+<input [(ngModel)]="person.first_name" class="border mr-2 p-1"/>
+<input [(ngModel)]="person.last_name" class="border mr-2 p-1"/>
+<button (click)="reset()" class="p-1 pl-4 pr-4 rounded-md border bg-slate-400 text-slate-700 font-semibold">Change Name</button>
+<div class="mt-5">
+    <label class="block font-medium text-slate-300 mb-1">Pure</label>
+    <span class="text-slate-300">{{ 'pizza' | pure }}</span>
+</div>
+<div class="mt-5">
+    <label class="block font-medium text-slate-300 mb-1">Impure</label>
+    <span class="text-slate-300">{{ 'burger' | impure }}</span>
+</div>

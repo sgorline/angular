@@ -11,6 +11,9 @@
     </li>
   </ul>
   <div class="mt-10">
+    @if (url === "/") {
+      <img src="assets/images/babyhead.jpg" alt="Baby Head" class="m-auto mt-20 rounded-3xl" style="height: 150px">
+    }
     <router-outlet />
   </div>
 </main>
