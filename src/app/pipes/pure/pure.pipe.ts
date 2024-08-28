@@ -1,5 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+type Person = {
+  first_name: string,
+  last_name: string
+};
+
 @Pipe({
   name: 'pure',
   standalone: true,
@@ -7,8 +12,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PurePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return 'pure returned value';
+  transform(value: Person, ...args: unknown[]): unknown {
+    return value.first_name.charAt(0).toUpperCase() + value.first_name.substring(1).toLowerCase()
+      + ' '
+      + value.last_name.charAt(0).toUpperCase() + value.last_name.substring(1).toLowerCase();
   }
 
 }

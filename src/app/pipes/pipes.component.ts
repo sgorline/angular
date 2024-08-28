@@ -18,21 +18,21 @@ type Person = {
 export class PipesComponent {
 
   public person: Person = {
-    first_name: 'Steve',
-    last_name: 'Gorline'
+    first_name: 'steve',
+    last_name: 'gorline'
   };
 
   private persons: Person[] = [
-    { first_name: 'Alice', last_name: 'Smith' },
-    { first_name: 'Bob', last_name: 'Jones' },
-    { first_name: 'Carol', last_name: 'Williams' },
-    { first_name: 'David', last_name: 'Brown' },
-    { first_name: 'Emily', last_name: 'Taylor' },
-    { first_name: 'Frank', last_name: 'Thomas' },
-    { first_name: 'Grace', last_name: 'Johnson' },
-    { first_name: 'Hannah', last_name: 'White' },
-    { first_name: 'Isaac', last_name: 'Miller' },
-    { first_name: 'Jessica', last_name: 'Davis' }
+    { first_name: 'alice', last_name: 'smith' },
+    { first_name: 'bob', last_name: 'jones' },
+    { first_name: 'carol', last_name: 'williams' },
+    { first_name: 'david', last_name: 'brown' },
+    { first_name: 'emily', last_name: 'taylor' },
+    { first_name: 'frank', last_name: 'thomas' },
+    { first_name: 'grace', last_name: 'johnson' },
+    { first_name: 'hannah', last_name: 'white' },
+    { first_name: 'isaac', last_name: 'miller' },
+    { first_name: 'jessica', last_name: 'davis' }
   ];
 
   public reset(): void {
