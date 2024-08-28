@@ -9,10 +9,16 @@
     <li class="m-3">
       <a routerLink="/pipes" class="text-slate-300" [routerLinkActive]="['underline', 'underline-offset-4']"  ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{exact: true}">Pipes</a>
     </li>
+    <li class="m-3">
+      <a routerLink="/ngrx/ngrx-1" class="text-slate-300" [routerLinkActive]="['underline', 'underline-offset-4']"  ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{exact: true}">NGRX 1</a>
+    </li>
+    <li class="m-3">
+      <a routerLink="/ngrx/ngrx-2" class="text-slate-300" [routerLinkActive]="['underline', 'underline-offset-4']"  ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{exact: true}">NGRX 2</a>
+    </li>
   </ul>
   <div class="mt-10">
     @if (url === "/") {
-      <img src="assets/images/babyhead.jpg" alt="Baby Head" class="m-auto mt-20 rounded-3xl" style="height: 150px">
+      <img src="assets/images/babyhead.jpg" alt="Baby Head" class="m-auto mt-12 rounded-3xl" style="height: 150px">
     }
     <router-outlet />
   </div>
