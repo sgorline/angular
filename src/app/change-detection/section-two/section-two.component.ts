@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 type Person = {
@@ -14,12 +14,16 @@ type Person = {
   styleUrl: './section-two.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SectionTwoComponent implements OnChanges{
+export class SectionTwoComponent implements OnChanges, DoCheck {
 
   @Input() parentData: Person;
 
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(changes);
+  }
+
+  ngDoCheck() {
+    // console.log('SectionTwoComponent - ngDoCheck');
   }
 
 }

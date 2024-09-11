@@ -1,0 +1,19 @@
+<div class="text-slate-300">
+    <!-- @if -->
+    <div class="mb-4">
+        <label class="block font-medium text-slate-300">&#64;if</label>
+        @if (loading) {
+            App is loading...
+        } @else {
+            Loaded!
+        }
+    </div>
+    <!-- @for -->
+    <div class="mb-4">
+        <label class="block font-medium text-slate-300">&#64;for</label>
+        @for (car of cars; track car.id) {
+            {{ car.model }} - {{ car.year }} &nbsp;&nbsp;&nbsp;&nbsp;
+        }
+    </div>
+
+</div>

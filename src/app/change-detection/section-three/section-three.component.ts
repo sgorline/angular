@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 type Person = {
@@ -14,7 +14,7 @@ type Person = {
   styleUrl: './section-three.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SectionThreeComponent implements OnInit, OnChanges {
+export class SectionThreeComponent implements OnInit, OnChanges, DoCheck {
 
   @Input() parentData: Person;
 
@@ -23,7 +23,6 @@ export class SectionThreeComponent implements OnInit, OnChanges {
   constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    console.log(this.parentData);
     this.originalFirstName = this.parentData.first_name;
   }
 
@@ -32,6 +31,7 @@ export class SectionThreeComponent implements OnInit, OnChanges {
   }
 
   ngDoCheck() {
+    // console.log('SectionThreeComponent - ngDoCheck');
     if (this.parentData.first_name !== this.originalFirstName) {
       this.cd.markForCheck();
       this.originalFirstName = this.parentData.first_name;
