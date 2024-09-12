@@ -1,5 +1,5 @@
 <div class="text-slate-300">
-    <!-- @if -->
+    
     <div class="mb-4">
         <label class="block font-medium text-slate-300 italic">
             &#64;if (loading) &#123; &#125; ... &#64;else &#123; &#125;
@@ -10,7 +10,7 @@
             Loaded!
         }
     </div>
-    <!-- @for -->
+    
     <div class="mb-4">
         <label class="block font-medium text-slate-300 italic">
             &#64;for (car of cars; track car.id) &#123; &#125;
@@ -19,5 +19,34 @@
             {{ car.model }} - {{ car.year }} &nbsp;&nbsp;&nbsp;&nbsp;
         }
     </div>
+    
+    <div class="mb-4">
+        <label class="block font-medium text-slate-300 italic">
+            Property binding - [hidden], [href]
+        </label>
+       <span [hidden]="hidden">not hidden</span>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+       <a [href]="url" target="_blank">dynamic link</a>
+    </div>
+    
+    <div class="mb-4">
+        <label class="block font-medium text-slate-300 italic">
+            Event handling - (mouseover)="onMouseOver()"
+        </label>
+       <button (mouseover)="onMouseOver()" class="p-1 pl-4 pr-4 mt-2 rounded-md border bg-slate-400 text-slate-700 font-semibold">Mouseover me!</button>
+    </div>
+    
+    <div class="mb-4">
+        <label class="block font-medium text-slate-300 italic">
+            &#64;Input() name: string = ''; ... &#64;Output() nameChanged = new EventEmitter&lt;string&gt;();
+        </label>
+        @if (!name) {
+            <br/>
+        }
+        {{ name }}
+        <app-child [name]="name" (nameChanged)="onNameChanged($event)"></app-child>
+    </div>
+
+
 
 </div>
