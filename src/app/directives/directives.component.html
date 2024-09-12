@@ -1,0 +1,14 @@
+<div class="text-slate-300 text-center">
+    <label class="block mb-1">
+        Attribute <i>(Change the appearance or behavior of an element, component, or another directive)</i>
+    </label>
+    <div [appAttribute]="color" class="m-auto mb-4" style="width: 200px">
+        Mouseover me!
+    </div>
+    <label class="block mb-1">
+        Structural <i>(Change the DOM layout by adding and removing DOM elements) </i>
+    </label>
+    <div *appStructural="user">
+        Can delete!
+    </div>
+</div>

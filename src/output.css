@@ -562,6 +562,10 @@ video {
   margin: auto;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -592,6 +596,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .justify-center {
