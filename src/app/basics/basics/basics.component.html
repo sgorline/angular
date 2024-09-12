@@ -22,7 +22,7 @@
     
     <div class="mb-4">
         <label class="block font-medium text-slate-300 italic">
-            Property binding - [hidden], [href]
+            Property binding - [hidden]="hidden", [href]="url"
         </label>
        <span [hidden]="hidden">not hidden</span>
        &nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,6 +47,18 @@
         <app-child [name]="name" (nameChanged)="onNameChanged($event)"></app-child>
     </div>
 
+    <div class="mb-4">
+        <label class="block font-medium text-slate-300 italic">
+            [ngClass]="&lt;'bg-slate-400': loading&gt;"
+        </label>
+        <div [ngClass]="{'bg-slate-400': loading}" [style.width]="'100px'" class="m-auto mt-2">hello</div>
+    </div>
 
+    <div class="mb-4">
+        <label class="block font-medium text-slate-300 italic">
+            protected userService = inject(UserService);
+        </label>
+        {{ userService.getUser() | json }}
+    </div>
 
 </div>
