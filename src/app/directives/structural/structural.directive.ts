@@ -1,25 +1,15 @@
-import { Directive, Input, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-
-interface User {
-  permissions: {
-    create: boolean;
-    read: boolean;
-    update: boolean;
-    delete: boolean;
-  }
-};
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { User } from '../../models/user.model';
 
 @Directive({
   selector: '[appStructural]',
   standalone: true
 })
-export class StructuralDirective implements OnInit {
+export class StructuralDirective {
 
   @Input() set appStructural(user: User) {
-    console.log(user);
-    if (user.permissions.delete) {
+    if (user.permissions.update) {
       this.viewContainerRef.createEmbeddedView(this.templateRef);
-
     } else {
       this.viewContainerRef.clear();
     }
@@ -29,9 +19,5 @@ export class StructuralDirective implements OnInit {
     private templateRef: TemplateRef<unknown>,
     private viewContainerRef: ViewContainerRef
   ) { }
-
-  ngOnInit(): void {
-
-  }
 
 }

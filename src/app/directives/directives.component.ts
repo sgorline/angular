@@ -1,15 +1,7 @@
 import { AttributeDirective } from './attribute/attribute.directive';
 import { Component } from '@angular/core';
 import { StructuralDirective } from './structural/structural.directive';
-
-export interface User {
-  permissions: {
-    create: boolean;
-    read: boolean;
-    update: boolean;
-    delete: boolean;
-  }
-};
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-directives',
@@ -25,10 +17,10 @@ export class DirectivesComponent {
   public user: User =
     {
       permissions: {
-        create: true,
+        create: false,
         read: true,
         update: true,
-        delete: true
+        delete: false
       }
     };
 
