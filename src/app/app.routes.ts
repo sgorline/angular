@@ -4,6 +4,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { Ngrx1Component } from './ngrx/ngrx-1/ngrx-1.component';
 import { Ngrx2Component } from './ngrx/ngrx-2/ngrx-2.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms/reactive-forms.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'directives', component: DirectivesComponent },
     { path: 'ngrx/ngrx-1', component: Ngrx1Component },
     { path: 'ngrx/ngrx-2', component: Ngrx2Component },
-    { path: 'pipes', component: PipesComponent }
+    { path: 'pipes', component: PipesComponent },
+    { path: 'reactive-forms', component: ReactiveFormsComponent }
 ];

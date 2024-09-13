@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+    <label class="block font-medium mb-1 text-slate-300">
+        Name <span class="text-red-600">*</span>
+    </label>
+    <input 
+        class="border mr-2 p-1 text-neutral-900 w-1/5"
+        formControlName="name"/>
+    @if (form.invalid && form.controls['name'].dirty) {
+        <div class="text-red-600 mt-2 italic">
+            @if (form.controls['name'].errors?.['required']) {
+                Name is required.<br/>
+            }
+        </div>
+    }
+</form>
