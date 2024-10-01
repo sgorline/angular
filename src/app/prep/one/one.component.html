@@ -1,25 +1,31 @@
 <div class="text-slate-300">
 
-    <form ngForm="form">
-        @for (name of names | slice: 0 : 2; track name.id) {
-            <div class="mb-1">
-                {{ name.name }}
-            </div>
-        }
-        @for (car of cars; track car) {
-            <div class="mb-1">
-                <input name="car_{{ $index }}" [ngModel]="car">
-            </div>
-        }
-        @for (number of numbers; track number) {
-            <div class="mb-1">
-                {{ number }}
-            </div>
-        }
-    </form>
+    <div>
+        <button (click)="toggles['closures'] = !toggles['closures']">closures</button>
+        <div *ngIf="toggles['closures']" class="italic">
+            &nbsp;
+        </div>
+    </div>
 
-    <button (click)="toggleText()" class="mt-4 p-1 pl-4 pr-4 rounded-md border bg-slate-400 text-slate-700 font-semibold">
-        {{ text }}
-    </button>
+    <div>
+        <button (click)="toggles['event_loop'] = !toggles['event_loop']">event loop</button>
+        <div *ngIf="toggles['event_loop']" class="italic">
+            &nbsp;
+        </div>
+    </div>
+
+    <div>
+        <button (click)="toggles['merge_objects'] = !toggles['merge_objects']">merge objects</button>
+        <div *ngIf="toggles['merge_objects']" class="italic">
+            &nbsp;
+        </div>
+    </div>
+
+    <div>
+        <button (click)="toggles['rxjs'] = !toggles['rxjs']">rxjs</button>
+        <div *ngIf="toggles['rxjs']" class="italic">
+            &nbsp;
+        </div>
+    </div>
 
 </div>

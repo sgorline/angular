@@ -7,6 +7,7 @@ import { OneComponent } from './prep/one/one.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms/reactive-forms.component';
 import { Routes } from '@angular/router';
+import { TwoComponent } from './prep/two/two.component';
 
 export const routes: Routes = [
     { path: 'basics', component: BasicsComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'ngrx/ngrx-2', component: Ngrx2Component },
     { path: 'pipes', component: PipesComponent },
     { path: 'prep/one', component: OneComponent },
+    { path: 'prep/two', component: TwoComponent },
     { path: 'reactive-forms', component: ReactiveFormsComponent }
 ];

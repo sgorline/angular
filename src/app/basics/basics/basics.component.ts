@@ -48,23 +48,23 @@ export class BasicsComponent implements OnInit {
       console.log(key, value);
     }
 
-    const token = 'OWCYQ3A8HWF9WHFCCHE';
+    const token = 'steve';
     token.slice(0, 3);
-    console.log(token);
-    const shortened = token.slice(6, 9);
-    console.log(shortened);
+    console.log(token); // steve
+    const shortened = token.slice(1, 3);
+    console.log(shortened); // te
 
     const places = ['Ireland', 'New York', 'St. Louis'];
     places.splice(2, 1, 'Jamaica');
-    console.log(places);
+    console.log(places); // ['Ireland', 'New York', 'Jamaica']
 
     const animals = ['cat', 'dog', 'bird'];
     const updated = animals.slice(0, 1);
-    console.log(updated);
+    console.log(updated); // ['cat']
 
     let isGood = 'yah';
     const weather = isGood ?? 'not so good';
-    console.log(weather);
+    console.log(weather); // yah
 
     const sixMillionDollars = 6 * Multiplier.m;
     console.log(sixMillionDollars);
@@ -82,6 +82,11 @@ export class BasicsComponent implements OnInit {
       });
     });
     console.log(dailyValues, result);
+
+    const str = "fred";
+    for (const char of str) {
+      console.log(char);
+    };
 
   }
 

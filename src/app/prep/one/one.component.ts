@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
-import { SlicePipe } from '@angular/common';
+import { NgIf, SlicePipe } from '@angular/common';
+
+interface Toggle {
+  [key: string]: boolean;
+}
 
 @Component({
   selector: 'app-one',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, SlicePipe],
+  imports: [FormsModule, NgIf, ReactiveFormsModule, SlicePipe],
   templateUrl: './one.component.html',
   styleUrl: './one.component.scss'
 })
@@ -16,6 +20,7 @@ export class OneComponent implements OnInit {
   public numbers = [22, 4, 9, 10];
   public text: string = 'not toggled';
   public toggled: boolean = false;
+  public toggles: Toggle = {};
 
   public form: FormGroup;
 
