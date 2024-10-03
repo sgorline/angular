@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
-import { NgIf, SlicePipe } from '@angular/common';
+import { NgClass, NgIf, SlicePipe } from '@angular/common';
 
 interface Toggle {
   [key: string]: boolean;
@@ -9,7 +9,7 @@ interface Toggle {
 @Component({
   selector: 'app-one',
   standalone: true,
-  imports: [FormsModule, NgIf, ReactiveFormsModule, SlicePipe],
+  imports: [FormsModule, NgClass, NgIf, ReactiveFormsModule, SlicePipe],
   templateUrl: './one.component.html',
   styleUrl: './one.component.scss'
 })
@@ -44,5 +44,15 @@ export class OneComponent implements OnInit {
     this.toggled = !this.toggled;
     this.text = this.toggled ? 'toggled' : 'not toggled';
   }
+
+  private foo(): Function {
+    let b = 1;
+    function inner() {
+      return b;
+    }
+    return inner;
+  }
+
+  public get_func_inner = this.foo();
 
 }

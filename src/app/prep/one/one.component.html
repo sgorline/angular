@@ -1,29 +1,121 @@
 <div class="text-slate-300">
 
-    <div>
-        <button (click)="toggles['closures'] = !toggles['closures']">closures</button>
-        <div *ngIf="toggles['closures']" class="italic">
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['closures']}">
+        <button class="font-bold" (click)="toggles['closures'] = !toggles['closures']">Closures</button>
+        <div *ngIf="toggles['closures']" class="italic mb-2 mt-0 pb-1">
+            Closures in JavaScript are functions that retain access to variables from their containing scope even after the parent function has finished executing. They’re useful for maintaining private data, creating modular code, and implementing callback functions with persistent state.
+            <br/><br/>
+            <div class="font-bold">What is a Closure?</div>
+            A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). When you create a closure, you gain access to an outer function’s scope from an inner function. Closures are automatically created every time a function is defined in JavaScript.
+            <br/><br/>
+            <div class="font-bold">Lexical Scoping</div>
+            Lexical scoping refers to how a parser resolves variable names when functions are nested. The location where a variable is declared within the source code determines where that variable is available. Nested functions have access to variables declared in their outer scope. Consider the following example:
+            <br/><br/>
+            Example: This example shows the basic use of closure.
+            <br/>
+            get_func_inner() - {{ get_func_inner() }}
+            <br/>
+            get_func_inner() - {{ get_func_inner() }}
+            <br/>
+            get_func_inner() - {{ get_func_inner() }}
+            <!-- https://www.geeksforgeeks.org/closure-in-javascript/ -->
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['event_loop']}">
+        <button class="font-bold" (click)="toggles['event_loop'] = !toggles['event_loop']">Event Loop</button>
+        <div *ngIf="toggles['event_loop']" class="italic mb-2 mt-0 pb-1">
             &nbsp;
         </div>
     </div>
 
-    <div>
-        <button (click)="toggles['event_loop'] = !toggles['event_loop']">event loop</button>
-        <div *ngIf="toggles['event_loop']" class="italic">
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['merge_objects']}">
+        <button class="font-bold" (click)="toggles['merge_objects'] = !toggles['merge_objects']">Merge Objects</button>
+        <div *ngIf="toggles['merge_objects']" class="italic mb-2 mt-0 pb-1">
             &nbsp;
         </div>
     </div>
 
-    <div>
-        <button (click)="toggles['merge_objects'] = !toggles['merge_objects']">merge objects</button>
-        <div *ngIf="toggles['merge_objects']" class="italic">
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['rxjs']}">
+        <button class="font-bold" (click)="toggles['rxjs'] = !toggles['rxjs']">RXJS</button>
+        <div *ngIf="toggles['rxjs']" class="italic mb-2 mt-0 pb-1">
             &nbsp;
         </div>
     </div>
 
-    <div>
-        <button (click)="toggles['rxjs'] = !toggles['rxjs']">rxjs</button>
-        <div *ngIf="toggles['rxjs']" class="italic">
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['lazy_loading']}">
+        <button class="font-bold" (click)="toggles['lazy_loading'] = !toggles['lazy_loading']">Lazy Loading</button>
+        <div *ngIf="toggles['lazy_loading']" class="italic mb-2 mt-0 pb-1">
+            By default, NgModules are eagerly loaded. This means that as soon as the application loads, so do all the NgModules, whether they are immediately necessary or not. For large applications with lots of routes, consider lazy loading —a design pattern that loads NgModules as needed. Lazy loading helps keep initial bundle sizes smaller, which in turn helps decrease load times.
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['aot']}">
+        <button class="font-bold" (click)="toggles['aot'] = !toggles['aot']">AOT (prod) vs. JIT (dev)</button>
+        <div *ngIf="toggles['aot']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['host']}">
+        <button class="font-bold" (click)="toggles['host'] = !toggles['host']">:host, :ng-deep</button>
+        <div *ngIf="toggles['host']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['ng_content']}">
+        <button class="font-bold" (click)="toggles['ng_content'] = !toggles['ng_content']">Multiple &lt;ng-content&gt;s</button>
+        <div *ngIf="toggles['ng_content']" class="italic mb-2 mt-0 pb-1">
+            yes
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['generics']}">
+        <button class="font-bold" (click)="toggles['generics'] = !toggles['generics']">Generics</button>
+        <div *ngIf="toggles['generics']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['lambda']}">
+        <button class="font-bold" (click)="toggles['lambda'] = !toggles['lambda']">Lambda</button>
+        <div *ngIf="toggles['lambda']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['class_v_interface']}">
+        <button class="font-bold" (click)="toggles['class_v_interface'] = !toggles['class_v_interface']">Class vs. Interface</button>
+        <div *ngIf="toggles['class_v_interface']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['interface_v_type']}">
+        <button class="font-bold" (click)="toggles['interface_v_type'] = !toggles['interface_v_type']">Interface vs. Type</button>
+        <div *ngIf="toggles['interface_v_type']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['directives_v_components']}">
+        <button class="font-bold" (click)="toggles['directives_v_components'] = !toggles['directives_v_components']">Directives vs. Components</button>
+        <div *ngIf="toggles['directives_v_components']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['pure_v_impure_pipe']}">
+        <button class="font-bold" (click)="toggles['pure_v_impure_pipe'] = !toggles['pure_v_impure_pipe']">Pure vs. Impure Pipes</button>
+        <div *ngIf="toggles['pure_v_impure_pipe']" class="italic mb-2 mt-0 pb-1">
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="mt-1" [ngClass]="{ 'bg-slate-200 text-slate-800' : toggles['change_detection_strategy']}">
+        <button class="font-bold" (click)="toggles['change_detection_strategy'] = !toggles['changedetection_strategy']">Change Detection Strategy</button>
+        <div *ngIf="toggles['change_detection_strategy']" class="italic mb-2 mt-0 pb-1">
             &nbsp;
         </div>
     </div>
